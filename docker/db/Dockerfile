@@ -1,0 +1,6 @@
+FROM postgres:14.3
+
+ENV POSTGRES_DB=fastapi
+ENV POSTGRES_PASSWORD=fastapi
+EXPOSE 5432
+CMD ["postgres"]

@@ -1,0 +1,49 @@
+version: '3.7'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/api/Dockerfile.dev
+    container_name: api
+    hostname: api
+    env_file:
+      - .env.docker
+    ports:
+      - '8000:8000'
+    networks:
+      - backend
+    tty: true
+    depends_on:
+      - db
+    volumes:
+      - ./src:/home/docker_user/app
+      - ./migrations:/home/docker_user/migrations
+      - ./alembic.ini:/home/docker_user/domain/alembic.ini
+
+      - ./alembic.ini:/home/docker_user/app/alembic.ini
+  db:
+    build:
+      context: .
+      dockerfile: docker/db/Dockerfile
+    container_name: db
+    hostname: db
+    ports:
+      - '5432:5432'
+    networks:
+      - backend
+
+  redis:
+    build:
+      context: .
+      dockerfile: docker/redis/Dockerfile
+    container_name: redis
+    hostname: redis
+    ports:
+      - '6379:6379'
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: 'bridge'
