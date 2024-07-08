@@ -9,7 +9,7 @@ def json_encoder_extend(obj):
 
 
 class CustomORJSONResponse(JSONResponse):
-    media_type = "application/json"
+    media_type = "src.application/json"
 
     def render(self, content: Any) -> bytes:
         assert orjson is not None, "orjson must be installed"

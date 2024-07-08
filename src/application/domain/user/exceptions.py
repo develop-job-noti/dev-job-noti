@@ -1,4 +1,4 @@
-from application.core.exceptions import CustomException
+from src.application.core.exceptions import CustomException
 
 
 class UserDomainException(CustomException):

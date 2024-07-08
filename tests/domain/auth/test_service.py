@@ -1,15 +1,15 @@
 import pytest
 import pytest_asyncio
-from application.domain.user.models import User
+from src.application.domain.user.models import User
 
-from application.core.db import standalone_session
+from src.application.core.db import standalone_session
 
-from application.server import app
+from src.application.server import app
 
 from sqlalchemy import select
 
-from application.domain.auth.service import TokenService
-from application.domain.auth.models import Token
+from src.application.domain.auth.service import TokenService
+from src.application.domain.auth.models import Token
 
 root_container = app.container
 

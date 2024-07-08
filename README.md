@@ -12,19 +12,19 @@ Source is from [Teamhide's fastapi-boilerplate](https://github.com/teamhide/fast
 
 # Added Features
 
-- Code dependencies are managed by [Dependency Injector](https://python-dependency-injector.ets-labs.org/) under `src/application/container.py`
-- All projects settings are injected by `.env` file thorough pydantic Settings. (refer `src/application/core/config/settings_model.py`)
+- Code dependencies are managed by [Dependency Injector](https://python-dependency-injector.ets-labs.org/) under `src/src.application/container.py`
+- All projects settings are injected by `.env` file thorough pydantic Settings. (refer `src/src.application/core/config/settings_model.py`)
 - More simplified skeleton
   - separate src(fastapi app related code) and others(docker, tests)
   - [Netflix dispatcher style domain component](https://github.com/Netflix/dispatch)
 - Static type check(by mypy) is done.
-- Log router for request and response logging (`src/application/core/fastapi/log_router.py`) can log Internal Server Error 
+- Log router for request and response logging (`src/src.application/core/fastapi/log_router.py`) can log Internal Server Error 
 - makefile (for easier development)
 - Separate poetry dependency group into 2, one is for production, other is for develop
-- Aiohttp client for request external service (`src/application/core/external_service/http_client`)
-- Authentication middleware for external auth server (`src/application/core/middlewares/authentication_external`)
-- Classified Exception Class (`src/application/core/exceptions`)
-- Json Encoder Extended CustomORJSONResponse for faster serialization(`src/application/core/fastapi/custom_json_response.py`)
+- Aiohttp client for request external service (`src/src.application/core/external_service/http_client`)
+- Authentication middleware for external auth server (`src/src.application/core/middlewares/authentication_external`)
+- Classified Exception Class (`src/src.application/core/exceptions`)
+- Json Encoder Extended CustomORJSONResponse for faster serialization(`src/src.application/core/fastapi/custom_json_response.py`)
 - Async test samples on pytest-asyncio with samples 
 
 # Project Config
@@ -81,7 +81,7 @@ $ make run
 ## SQLAlchemy for asyncio context
 
 ```python
-from application.core.db import Transactional
+from src.application.core.db import Transactional
 from dependency_injector.wiring import Provide
 
 session = Provide["session"]
@@ -102,7 +102,7 @@ However, it doesn't go through middleware in tests or background tasks.
 So you need to use the `@standalone_session` decorator.
 
 ```python
-from application.core.db import standalone_session
+from src.application.core.db import standalone_session
 
 
 @standalone_session
@@ -167,10 +167,10 @@ Refer `Logging` class inside of `core/fastapi/dependencies/logging.py`
 Permissions `IsAdmin`, `IsAuthenticated`, `AllowAll` have already been implemented.
 
 ```python
-from application.core.fastapi.dependencies import (
+from src.application.core.fastapi.dependencies import (
   PermissionDependency,
 )
-from application.core.authority.permissions import IsAdmin
+from src.application.core.authority.permissions import IsAdmin
 
 user_router = APIRouter()
 
@@ -203,7 +203,7 @@ Refer the README of https://github.com/teamhide/fastapi-event
 ### Caching by prefix
 
 ```python
-from application.core.helpers.cache import cached
+from src.application.core.helpers.cache import cached
 
 
 @cached(prefix="get_user", ttl=60)
@@ -214,7 +214,7 @@ async def get_user():
 ### Caching by tag
 
 ```python
-from application.core.helpers.cache import cached, CacheTag
+from src.application.core.helpers.cache import cached, CacheTag
 
 
 @cached(tag=CacheTag.GET_USER_LIST, ttl=60)
@@ -229,7 +229,7 @@ Depending on the argument of the function, caching is stored with a different va
 ### Custom Key builder
 
 ```python
-from application.core.helpers.cache.base import BaseKeyMaker
+from src.application.core.helpers.cache.base import BaseKeyMaker
 
 
 class CustomKeyMaker(BaseKeyMaker):
@@ -242,7 +242,7 @@ If you want to create a custom key, inherit the BaseKeyMaker class and implement
 ### Custom Backend
 
 ```python
-from application.core.helpers.cache.base import BaseBackend
+from src.application.core.helpers.cache.base import BaseBackend
 
 
 class RedisBackend(BaseBackend):
@@ -271,7 +271,7 @@ redis_key_maker = providers.Factory(YourKeyMaker)
 ### Remove all cache by prefix/tag
 
 ```python
-from application.core.helpers.cache import CacheTag
+from src.application.core.helpers.cache import CacheTag
 
 from dependency_injector.wiring import Provide
 

@@ -5,13 +5,13 @@ import nest_asyncio
 from dependency_injector.wiring import Provide, inject
 from fastapi import FastAPI, Request
 
-from application.api import router
-from application.container import AppContainer
-from application.core.enums import ResponseCode
-from application.core.exceptions import CustomException
-from application.core.external_service.http_client import Aiohttp
-from application.core.fastapi.custom_json_response import CustomORJSONResponse
-from application.domain.log.service import DatabaseLoghandler
+from src.application.api import router
+from src.application.container import AppContainer
+from src.application.core.enums import ResponseCode
+from src.application.core.exceptions import CustomException
+from src.application.core.external_service.http_client import Aiohttp
+from src.application.core.fastapi.custom_json_response import CustomORJSONResponse
+from src.application.domain.log.service import DatabaseLoghandler
 
 nest_asyncio.apply()
 

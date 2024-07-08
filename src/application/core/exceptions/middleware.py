@@ -1,7 +1,7 @@
 from http import HTTPStatus
 
-from application.core.enums import ResponseCode
-from application.core.exceptions import AuthException
+from src.application.core.enums import ResponseCode
+from src.application.core.exceptions import AuthException
 
 
 class NoAuthenticationException(AuthException):

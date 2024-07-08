@@ -13,9 +13,9 @@ from starlette.middleware.authentication import (
 )
 from starlette.requests import HTTPConnection
 
-from application.core.exceptions import ExternalServiceException, TokenException
-from application.core.exceptions.token import TokenDecodeException
-from application.core.external_service import AuthClient
+from src.application.core.exceptions import ExternalServiceException, TokenException
+from src.application.core.exceptions.token import TokenDecodeException
+from src.application.core.external_service import AuthClient
 
 from ..exceptions.middleware import NoAuthenticationException
 

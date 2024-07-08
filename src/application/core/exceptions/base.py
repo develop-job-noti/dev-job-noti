@@ -1,7 +1,7 @@
 from abc import ABC
 from http import HTTPStatus
 
-from application.core.enums import ResponseCode
+from src.application.core.enums import ResponseCode
 
 
 class CustomException(ABC, Exception):

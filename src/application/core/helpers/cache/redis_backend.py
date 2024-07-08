@@ -6,7 +6,7 @@ from dependency_injector.providers import Singleton
 from dependency_injector.wiring import Provide
 from redis.asyncio.client import Redis
 
-from application.core.helpers.cache.base import BaseBackend
+from src.application.core.helpers.cache.base import BaseBackend
 
 
 class RedisBackend(BaseBackend):

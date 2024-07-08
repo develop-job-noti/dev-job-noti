@@ -5,7 +5,7 @@ from typing import Optional
 import aiohttp
 from aiohttp import ClientResponse, ClientSession
 
-from application.core.exceptions.external_service import (
+from src.application.core.exceptions.external_service import (
     ExternalServiceClientException,
     ExternalServiceServerException,
 )

@@ -3,10 +3,10 @@ from http import HTTPStatus
 from dependency_injector.wiring import Provide, inject
 from fastapi import APIRouter, Depends, Request
 
-from application.core.dependencies.permission import PermissionDependency
-from application.core.enums import ResponseCode
-from application.core.fastapi.custom_json_response import CustomORJSONResponse
-from application.core.fastapi.log_route import LogRoute
+from src.application.core.dependencies.permission import PermissionDependency
+from src.application.core.enums import ResponseCode
+from src.application.core.fastapi.custom_json_response import CustomORJSONResponse
+from src.application.core.fastapi.log_route import LogRoute
 
 from .models import YourResponseModel
 from .service import YourService

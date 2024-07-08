@@ -9,21 +9,21 @@ from sqlalchemy.ext.asyncio import (
 )
 from sqlalchemy.orm import sessionmaker
 
-from application.core.config.config_container import config_container
-from application.core.db.session_maker import RoutingSession, get_session_context
-from application.core.external_service.auth_client import AuthClient
-from application.core.external_service.http_client import Aiohttp
-from application.core.helpers.cache import CacheManager, CustomKeyMaker, RedisBackend
-from application.core.helpers.logging import init_logger
-from application.core.middlewares import (
+from src.application.core.config.config_container import config_container
+from src.application.core.db.session_maker import RoutingSession, get_session_context
+from src.application.core.external_service.auth_client import AuthClient
+from src.application.core.external_service.http_client import Aiohttp
+from src.application.core.helpers.cache import CacheManager, CustomKeyMaker, RedisBackend
+from src.application.core.helpers.logging import init_logger
+from src.application.core.middlewares import (
     AuthenticationMiddleware,
     ExternalAuthBackend,
     on_auth_error,
 )
-from application.core.middlewares.sqlalchemy import SQLAlchemyMiddleware
-from application.domain.auth.container import AuthContainer
-from application.domain.log.container import LogContainer
-from application.domain.user.container import UserContainer
+from src.application.core.middlewares.sqlalchemy import SQLAlchemyMiddleware
+from src.application.domain.auth.container import AuthContainer
+from src.application.domain.log.container import LogContainer
+from src.application.domain.user.container import UserContainer
 
 
 class AppContainer(containers.DeclarativeContainer):
@@ -32,7 +32,7 @@ class AppContainer(containers.DeclarativeContainer):
 
     # dependency injector coverage
     wiring_config = containers.WiringConfiguration(
-        packages=["application"],
+        packages=["src.application"],
         modules=[__name__],
     )
     logging = providers.Resource(init_logger, env=config.ENV)

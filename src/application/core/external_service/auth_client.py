@@ -4,9 +4,9 @@ from typing import Literal
 
 from aiohttp import ClientSession
 
-from application.core.enums import ResponseCode
-from application.core.exceptions.token import TokenDecodeException, TokenExpireException
-from application.core.external_service.http_client import BaseHttpClient
+from src.application.core.enums import ResponseCode
+from src.application.core.exceptions.token import TokenDecodeException, TokenExpireException
+from src.application.core.external_service.http_client import BaseHttpClient
 
 logger = logging.getLogger(__name__)
 
@@ -19,8 +19,8 @@ def encode_base64(string) -> str:
 
 class AuthClient(BaseHttpClient):
 
-    json_content_type = {"Content-Type": "application/json"}
-    form_url_content_type = {"Content-Type": "application/x-www-form-urlencoded"}
+    json_content_type = {"Content-Type": "src.application/json"}
+    form_url_content_type = {"Content-Type": "src.application/x-www-form-urlencoded"}
 
     def __init__(
         self,
@@ -48,7 +48,7 @@ class AuthClient(BaseHttpClient):
 
     def get_basic_header(self) -> dict:
         return {
-            "Content-Type": "application/x-www-form-urlencoded",
+            "Content-Type": "src.application/x-www-form-urlencoded",
             "Authorization": "Basic "
             + encode_base64(self._client_id + ":" + self._client_secret),
         }
@@ -67,7 +67,7 @@ class AuthClient(BaseHttpClient):
         atk = await self.get_server_access_token()
         return {
             "Authorization": "Bearer " + atk,
-            "Content-Type": "application/json",
+            "Content-Type": "src.application/json",
         }
 
     def get_header_cookie(self, key: str, value: str) -> dict:

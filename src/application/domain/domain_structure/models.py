@@ -1,7 +1,7 @@
 from sqlalchemy import BigInteger, Column
 
-from application.core.db import Base
-from application.core.fastapi.pydantic_models import ResponseBaseModel
+from src.application.core.db import Base
+from src.application.core.fastapi.pydantic_models import ResponseBaseModel
 
 
 class YourModel(Base):

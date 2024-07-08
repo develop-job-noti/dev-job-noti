@@ -1147,7 +1147,7 @@ socks = ["socksio (==1.*)"]
 [[package]]
 name = "idna"
 version = "3.4"
-description = "Internationalized Domain Names in Applications (IDNA)"
+description = "Internationalized Domain Names in src.applications (IDNA)"
 optional = false
 python-versions = ">=3.5"
 files = [

@@ -4,8 +4,8 @@ from dependency_injector.wiring import Provide
 from sqlalchemy import or_, select
 from sqlalchemy.ext.asyncio import async_scoped_session
 
-from application.core.base_class.repository import BaseAlchemyRepository
-from application.core.db import standalone_session
+from src.application.core.base_class.repository import BaseAlchemyRepository
+from src.application.core.db import standalone_session
 
 from .models import User
 

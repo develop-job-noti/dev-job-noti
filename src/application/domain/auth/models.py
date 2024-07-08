@@ -5,8 +5,8 @@ from dependency_injector.wiring import Provide
 from pydantic import Field
 from sqlalchemy import BigInteger, Boolean, Column, DateTime, Integer, String
 
-from application.core.db import Base
-from application.core.fastapi.pydantic_models import BodyBaseModel, ResponseBaseModel
+from src.application.core.db import Base
+from src.application.core.fastapi.pydantic_models import BodyBaseModel, ResponseBaseModel
 
 
 class Token(Base):

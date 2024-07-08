@@ -1,9 +1,9 @@
 import pytest_asyncio
-from application.domain.user.models import User
+from src.application.domain.user.models import User
 
-from application.core import standalone_session
+from src.application.core import standalone_session
 
-from application.server import app
+from src.application.server import app
 
 from sqlalchemy import select
 

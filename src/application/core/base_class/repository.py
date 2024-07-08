@@ -4,7 +4,7 @@ from dependency_injector.wiring import Provide
 from sqlalchemy import and_, delete, or_, select, update
 from sqlalchemy.ext.asyncio import async_scoped_session
 
-from application.core.enums.repository import SynchronizeSessionEnum
+from src.application.core.enums.repository import SynchronizeSessionEnum
 
 session: async_scoped_session = Provide["session"]
 

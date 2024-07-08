@@ -6,8 +6,8 @@ import pytest
 import pytest_asyncio
 from httpx import AsyncClient
 
-from application.core.db.session_maker import Base
-from application.core.external_service import AuthClient
+from src.application.core.db.session_maker import Base
+from src.application.core.external_service import AuthClient
 
 nest_asyncio.apply()
 
@@ -20,7 +20,7 @@ import os
 
 os.environ["ENV_FILE"] = ".env.test"
 
-from application.server import app
+from src.application.server import app
 
 engine = app.container.writer_engine()
 

@@ -4,12 +4,12 @@ from typing import Type
 
 from starlette.requests import Request
 
-from application.core.exceptions import CustomException
-from application.core.exceptions.middleware import (
+from src.application.core.exceptions import CustomException
+from src.application.core.exceptions.middleware import (
     NoAuthenticationException,
     NoAuthorityException,
 )
-from application.core.middlewares import AuthUser
+from src.application.core.middlewares import AuthUser
 
 
 class Authority(StrEnum):

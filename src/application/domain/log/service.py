@@ -1,8 +1,8 @@
 from dependency_injector.wiring import Provide
 from sqlalchemy.ext.asyncio import async_scoped_session
 
-from application.core.base_class.service import BaseService
-from application.core.db import standalone_session
+from src.application.core.base_class.service import BaseService
+from src.application.core.db import standalone_session
 
 from .models import RequestResponseLog
 from .repository import RequestResponseLogAlchemyRepository

@@ -1,6 +1,6 @@
 from dependency_injector import containers, providers
 
-from application.core.config.settings_model import Settings
+from src.application.core.config.settings_model import Settings
 
 
 class ConfigContainer(containers.DeclarativeContainer):

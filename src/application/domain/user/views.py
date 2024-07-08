@@ -3,9 +3,9 @@ from typing import List
 from dependency_injector.wiring import Provide, inject
 from fastapi import APIRouter, Depends, Query
 
-from application.core.dependencies import PermissionDependency
-from application.core.fastapi.log_route import LogRoute
-from application.core.helpers.cache.cache_manager import cached
+from src.application.core.dependencies import PermissionDependency
+from src.application.core.fastapi.log_route import LogRoute
+from src.application.core.helpers.cache.cache_manager import cached
 
 from .models import (
     CreateUserRequestSchema,

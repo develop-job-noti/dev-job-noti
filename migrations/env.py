@@ -26,15 +26,15 @@ if config.config_file_name is not None:
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
 
-from application.domain.user.models import Base, User
+from src.application.domain.user.models import Base, User
 
 # For auto generate schemas
-from application.core.config.config_container import config as app_config
-from application.domain.auth.models import Token
-from application.domain.log.models import RequestResponseLog
+from src.application.core.config.config_container import config as app_config
+from src.application.domain.auth.models import Token
+from src.application.domain.log.models import RequestResponseLog
 
 # For auto generate schemas
-from application.core.config.config_container import config as app_config
+from src.application.core.config.config_container import config as app_config
 
 target_metadata = Base.metadata
 

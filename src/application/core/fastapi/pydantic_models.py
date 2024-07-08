@@ -4,7 +4,7 @@ from fastapi import Form
 from fastapi.exceptions import RequestValidationError
 from pydantic import BaseConfig, BaseModel, ValidationError
 
-from application.core.utils.camelcase import snake2camel
+from src.application.core.utils.camelcase import snake2camel
 
 
 class ResponseBaseModel(BaseModel):

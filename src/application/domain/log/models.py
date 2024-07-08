@@ -4,8 +4,8 @@ import sqlalchemy as sa
 from sqlalchemy import BigInteger, Column
 from sqlalchemy_utils import UUIDType
 
-from application.core.db import Base
-from application.core.db.mixins import TimestampMixin
+from src.application.core.db import Base
+from src.application.core.db.mixins import TimestampMixin
 
 
 class RequestResponseLog(Base, TimestampMixin):

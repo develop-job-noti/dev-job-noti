@@ -4,7 +4,7 @@ from dependency_injector.wiring import Provide
 from sqlalchemy.ext.asyncio import async_scoped_session
 from starlette.types import ASGIApp, Receive, Scope, Send
 
-from application.core.db.session_maker import reset_session_context, set_session_context
+from src.application.core.db.session_maker import reset_session_context, set_session_context
 
 session: async_scoped_session = Provide["session"]
 
